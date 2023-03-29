@@ -45,7 +45,7 @@ def fct_coefficient_sos(fech, a,b):
     plt.semilogx(w_sos, 20 * np.log10(np.abs(h_sos)))
     plt.semilogx(w_dft_q, 20 * np.log10(np.abs(h_dft_q)))
     plt.title(f"Réponse en fréquence des filtre elliptique")
-    plt.xlabel("Fr/uence [Hz]")
+    plt.xlabel("Fréquence [Hz]")
     plt.ylabel("Gain [dB]")
     plt.grid(which="both", axis="both")
     plt.tight_layout()

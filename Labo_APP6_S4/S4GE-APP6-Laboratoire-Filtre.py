@@ -5,6 +5,7 @@ from filtre_elliptique import fct_filtre_elliptique
 from reponse_impulsionnelle import fct_reponse_impulsionnelle
 from coefficient_sos import fct_coefficient_sos
 from zplane import zplane
+from FIR import *
 
 
 def probleme_1(fe: float):
@@ -48,6 +49,9 @@ def probleme_1(fe: float):
 
     #SOS
     fct_coefficient_sos(fe,a,b)
+
+    #FIR
+    filtre_FIR()
 
 
 
