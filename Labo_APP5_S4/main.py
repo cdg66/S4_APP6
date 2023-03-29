@@ -5,8 +5,9 @@ from coefficient_sos import fct_coefficient_sos
 from Affiche_coefficient import fct_affiche_coeffcient
 import matplotlib.pyplot as plt
 import numpy as np
-from Filtrage_FIR import *
+from creation_Filtrage_FIR import *
 from Creation_deux_sinus import*
+from Filtrage_signaux import*
 #from format_QX.Y import *
 # plt.ion()  # Comment out if using scientific mode!
 fe = 20000
@@ -18,7 +19,11 @@ fe = 20000
 #fonction_transfert_sos = fct_coefficient_sos(a,b)
 
 #fct_affiche_coeffcient(fonction_transfert_sos,a,b)
-#filtre_FIR()
-sinus()
+filtre_p_b,filtre_p_h = filtre_FIR()
+Grand_X1,Grand_X2 = sinus()
+fct_filtrage_signaux(Grand_X1,Grand_X2,filtre_p_b,filtre_p_h)
+
+print('Done')
+
 
 
