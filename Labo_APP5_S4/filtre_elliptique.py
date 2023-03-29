@@ -33,4 +33,4 @@ def fct_filtre_elliptique(fe: float):
     plt.grid(which="both", axis="both")
     plt.tight_layout()
     plt.show()
-    return a,b
+    return a,b,h_dft,w

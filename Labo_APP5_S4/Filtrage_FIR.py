@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy import signal
+import numpy as np
 
 def filtre_FIR():
     Fe = 20000
@@ -13,7 +14,7 @@ def filtre_FIR():
     firpb_h: np.ndarray = signal.firwin(
         numtaps=n, cutoff=fcpb, pass_zero="lowpass", window="hamming", fs=Fe
     )
-    print(firpb_h)
+    #print(firpb_h)
     firph_h: np.ndarray = signal.firwin(
         numtaps=n, cutoff=fcph, pass_zero="highpass", window="hamming", fs=Fe
     )
