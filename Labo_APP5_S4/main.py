@@ -9,7 +9,7 @@ from creation_Filtrage_FIR import *
 from Creation_deux_sinus import*
 from Filtrage_signaux import*
 #from format_QX.Y import *
-# plt.ion()  # Comment out if using scientific mode!
+plt.ion()  # Comment out if using scientific mode!
 fe = 20000
 #a,b,h_dft,w = fct_filtre_elliptique(fe)
 #z, p, k = fonction_zplane(a, b)
