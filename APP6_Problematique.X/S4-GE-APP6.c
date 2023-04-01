@@ -122,7 +122,7 @@ int main(void) {
 
     // Calculate spectral resolution, use (double) type casting for parameters
     // *** POINT A1: spectralResolution =...
-    //mips_fft32(int32c *dout, int32c *din, int32c *twiddles, int32c *scratch, int log2N);
+    spectralResolution = (double)Fe / (double)(4*H_LEN);
     // MX3 peripherals hardware initializations
     BTN_Init();
     LCD_Init();
@@ -248,6 +248,7 @@ int main(void) {
                 
                 // Calculate value in Hz of frequency with highest power 
                 // *** POINT A4: maxAmplFreq = ...
+                maxAmplFreq = maxN * spectralResolution;
 
                 // Show frequency with highest power on 7 segment display, max-out at 4 digits (9999)
                 numberInto4DigitString(maxAmplFreq, freqDigits);
