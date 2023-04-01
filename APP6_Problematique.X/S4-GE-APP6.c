@@ -122,7 +122,7 @@ int main(void) {
 
     // Calculate spectral resolution, use (double) type casting for parameters
     // *** POINT A1: spectralResolution =...
-
+    //mips_fft32(int32c *dout, int32c *din, int32c *twiddles, int32c *scratch, int log2N);
     // MX3 peripherals hardware initializations
     BTN_Init();
     LCD_Init();
@@ -232,6 +232,7 @@ int main(void) {
                 }
                 
                 // *** POINT A2: calculate frequency spectrum components X[k] with PIC32 DSP Library FFT function call
+                mips_fft32(outFFT, inFFT, twiddles, Scratch, log2N);
 
                 // Calculate power spectrum
                 calc_power_spectrum(outFFT, debugBuffer1, FFT_LEN);
@@ -344,10 +345,19 @@ int main(void) {
 //    add "1" to the log10() operand: log10(blah + 1).
 //
 
-void calc_power_spectrum(int32c *inbuf, int32_t *outbuf, int n) {
-    double re, im;
-
+void calc_power_spectrum(int32c *inbuf, int32_t *outbuf, int n) 
+{
     // *** POINT A3: Complete the calc_power_spectrum() function
+    int k;
+    double re, im;
+    for (k = 0; k < n; k++) 
+    {
+        re = inbuf[k].re;
+        im = inbuf[k].im;
+        outbuf[k] = 10*log10(sqrt((re*re)+(im*im)) + 1);
+    }
+
+
 }
 
 
