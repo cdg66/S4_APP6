@@ -15,17 +15,17 @@
         <itemPath>mcc_generated_files/tmr3.h</itemPath>
         <itemPath>mcc_generated_files/oc1.h</itemPath>
       </logicalFolder>
-      <itemPath>/home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/main.h</itemPath>
-      <itemPath>/home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/filterIIRcoeffs.h</itemPath>
-      <itemPath>/home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/window.h</itemPath>
-      <itemPath>/home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/filterFIRcoeffs.h</itemPath>
-      <itemPath>/home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/btn.h</itemPath>
-      <itemPath>/home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/lcd.h</itemPath>
-      <itemPath>/home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/swt.h</itemPath>
-      <itemPath>/home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/ssd.h</itemPath>
-      <itemPath>/home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/S4-GE-APP6.h</itemPath>
-      <itemPath>/home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/utils.h</itemPath>
-      <itemPath>/home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/config.h</itemPath>
+      <itemPath>S4-GE-APP6.h</itemPath>
+      <itemPath>btn.h</itemPath>
+      <itemPath>config.h</itemPath>
+      <itemPath>filterFIRcoeffs.h</itemPath>
+      <itemPath>filterIIRcoeffs.h</itemPath>
+      <itemPath>lcd.h</itemPath>
+      <itemPath>main.h</itemPath>
+      <itemPath>ssd.h</itemPath>
+      <itemPath>swt.h</itemPath>
+      <itemPath>utils.h</itemPath>
+      <itemPath>window.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -45,12 +45,13 @@
         <itemPath>mcc_generated_files/tmr2.c</itemPath>
         <itemPath>mcc_generated_files/tmr3.c</itemPath>
       </logicalFolder>
-      <itemPath>/home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/S4-GE-APP6.c</itemPath>
-      <itemPath>/home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/lcd.c</itemPath>
-      <itemPath>/home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/swt.c</itemPath>
-      <itemPath>/home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/btn.c</itemPath>
-      <itemPath>/home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/utils.c</itemPath>
-      <itemPath>/home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/ssd.c</itemPath>
+      <itemPath>S4-GE-APP6.c</itemPath>
+      <itemPath>btn.c</itemPath>
+      <itemPath>lcd.c</itemPath>
+      <itemPath>main.c</itemPath>
+      <itemPath>ssd.c</itemPath>
+      <itemPath>swt.c</itemPath>
+      <itemPath>utils.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -59,6 +60,9 @@
       <itemPath>Lab1.mc3</itemPath>
     </logicalFolder>
   </logicalFolder>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
     <conf name="default" type="2">
@@ -69,7 +73,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>PK3OBPlatformTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>2.50</languageToolchainVersion>
+        <languageToolchainVersion>4.10</languageToolchainVersion>
         <platform>2</platform>
       </toolsSet>
       <packs>
