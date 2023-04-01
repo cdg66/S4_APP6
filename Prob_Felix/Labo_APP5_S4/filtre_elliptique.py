@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy import signal
-
+from Format_Q2_5 import*
 def fct_filtre_elliptique(fe: float):
     """
     Problème 1: Filtre IIR elliptique
@@ -39,6 +39,11 @@ def fct_filtre_elliptique(fe: float):
         btype="bandstop",
         output="sos",
     )
+    coupe_bande_fft = np.fft.fft(H_transfert)
+    coupe_bande_Q2_5 = fct_format_Q2_5(coupe_bande_fft)
+
+
+
     H_transfert = H_transfert * np.power(2, 5)
     H_transfert = np.round(H_transfert)
     H_QX = H_transfert / np.power(2, 5)
@@ -53,7 +58,8 @@ def fct_filtre_elliptique(fe: float):
     plt.tight_layout()
     plt.legend()
     plt.show()
-    return a, b, h_dft, w
+    coupe_bande_Q2_5 = coupe_bande_Q2_5.ravel()
+    return coupe_bande_Q2_5
 #
 # def fct_filtre_elliptique(fe: float):
 #     """
