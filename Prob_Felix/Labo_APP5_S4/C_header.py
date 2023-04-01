@@ -2,6 +2,7 @@
 
 # Press Shift+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+
 import os
 import getpass
 def PY2C( array, filename='header.h',PYtype=int,Ctype='int32_t',varname='Coefficient', gard='HEADER_H',blocktitle='',includesanddef=['#include <stdint.h>'], static=1):
@@ -13,7 +14,6 @@ def PY2C( array, filename='header.h',PYtype=int,Ctype='int32_t',varname='Coeffic
     if (machine == 'java'):
         print('get fucked java user')
         return
-
     titleblock = [
         '/*',
         'File name: ',filename,nl,
@@ -25,7 +25,7 @@ def PY2C( array, filename='header.h',PYtype=int,Ctype='int32_t',varname='Coeffic
         ' */',nl
     ]
 
-    headder = open(filename, "w")
+    headder = open('C:/Users/Felix/Documents/GitHub/S4_APP6/APP6_Problematique.X/' + filename, "w")
     #write title and info
     if (blocktitle == ''): # title block not overwrited
         headder.writelines(titleblock)
@@ -46,12 +46,11 @@ def PY2C( array, filename='header.h',PYtype=int,Ctype='int32_t',varname='Coeffic
         headder.writelines('static ')
     headder.writelines([Ctype, ' '])
     #write varname
-    headder.writelines([varname, '[',str(len(array)),']', '= {'])
+    headder.writelines([varname,'[',str(len(array)),']', '= {',nl])
     #write array
     for i in range(len(array)-1):
-        headder.writelines([str(PYtype(array[i])),','])
+        headder.writelines(['{',str(PYtype(array.real[i])),',',str(PYtype(array.imag[i])),'},',nl])
     i = i+1
-    headder.writelines(str(array[i]))
-    headder.writelines(['};',nl])
+    headder.writelines(['{',str(PYtype(array.real[i])),',',str(PYtype(array.imag[i])),'}};', nl])
     # write end gard
     headder.writelines(['#endif ', gard])
