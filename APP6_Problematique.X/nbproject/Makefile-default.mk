@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=mcc_generated_files/interrupt_manager.c mcc_generated_files/mcc.c mcc_generated_files/pin_manager.c mcc_generated_files/adc1.c mcc_generated_files/oc1.c mcc_generated_files/tmr2.c mcc_generated_files/tmr3.c main.c
+SOURCEFILES_QUOTED_IF_SPACED=mcc_generated_files/interrupt_manager.c mcc_generated_files/mcc.c mcc_generated_files/pin_manager.c mcc_generated_files/adc1.c mcc_generated_files/oc1.c mcc_generated_files/tmr2.c mcc_generated_files/tmr3.c /home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/S4-GE-APP6.c /home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/lcd.c /home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/swt.c /home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/btn.c /home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/utils.c /home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/ssd.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/mcc_generated_files/interrupt_manager.o ${OBJECTDIR}/mcc_generated_files/mcc.o ${OBJECTDIR}/mcc_generated_files/pin_manager.o ${OBJECTDIR}/mcc_generated_files/adc1.o ${OBJECTDIR}/mcc_generated_files/oc1.o ${OBJECTDIR}/mcc_generated_files/tmr2.o ${OBJECTDIR}/mcc_generated_files/tmr3.o ${OBJECTDIR}/main.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/mcc_generated_files/interrupt_manager.o.d ${OBJECTDIR}/mcc_generated_files/mcc.o.d ${OBJECTDIR}/mcc_generated_files/pin_manager.o.d ${OBJECTDIR}/mcc_generated_files/adc1.o.d ${OBJECTDIR}/mcc_generated_files/oc1.o.d ${OBJECTDIR}/mcc_generated_files/tmr2.o.d ${OBJECTDIR}/mcc_generated_files/tmr3.o.d ${OBJECTDIR}/main.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/mcc_generated_files/interrupt_manager.o ${OBJECTDIR}/mcc_generated_files/mcc.o ${OBJECTDIR}/mcc_generated_files/pin_manager.o ${OBJECTDIR}/mcc_generated_files/adc1.o ${OBJECTDIR}/mcc_generated_files/oc1.o ${OBJECTDIR}/mcc_generated_files/tmr2.o ${OBJECTDIR}/mcc_generated_files/tmr3.o ${OBJECTDIR}/_ext/557432624/S4-GE-APP6.o ${OBJECTDIR}/_ext/557432624/lcd.o ${OBJECTDIR}/_ext/557432624/swt.o ${OBJECTDIR}/_ext/557432624/btn.o ${OBJECTDIR}/_ext/557432624/utils.o ${OBJECTDIR}/_ext/557432624/ssd.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/mcc_generated_files/interrupt_manager.o.d ${OBJECTDIR}/mcc_generated_files/mcc.o.d ${OBJECTDIR}/mcc_generated_files/pin_manager.o.d ${OBJECTDIR}/mcc_generated_files/adc1.o.d ${OBJECTDIR}/mcc_generated_files/oc1.o.d ${OBJECTDIR}/mcc_generated_files/tmr2.o.d ${OBJECTDIR}/mcc_generated_files/tmr3.o.d ${OBJECTDIR}/_ext/557432624/S4-GE-APP6.o.d ${OBJECTDIR}/_ext/557432624/lcd.o.d ${OBJECTDIR}/_ext/557432624/swt.o.d ${OBJECTDIR}/_ext/557432624/btn.o.d ${OBJECTDIR}/_ext/557432624/utils.o.d ${OBJECTDIR}/_ext/557432624/ssd.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/mcc_generated_files/interrupt_manager.o ${OBJECTDIR}/mcc_generated_files/mcc.o ${OBJECTDIR}/mcc_generated_files/pin_manager.o ${OBJECTDIR}/mcc_generated_files/adc1.o ${OBJECTDIR}/mcc_generated_files/oc1.o ${OBJECTDIR}/mcc_generated_files/tmr2.o ${OBJECTDIR}/mcc_generated_files/tmr3.o ${OBJECTDIR}/main.o
+OBJECTFILES=${OBJECTDIR}/mcc_generated_files/interrupt_manager.o ${OBJECTDIR}/mcc_generated_files/mcc.o ${OBJECTDIR}/mcc_generated_files/pin_manager.o ${OBJECTDIR}/mcc_generated_files/adc1.o ${OBJECTDIR}/mcc_generated_files/oc1.o ${OBJECTDIR}/mcc_generated_files/tmr2.o ${OBJECTDIR}/mcc_generated_files/tmr3.o ${OBJECTDIR}/_ext/557432624/S4-GE-APP6.o ${OBJECTDIR}/_ext/557432624/lcd.o ${OBJECTDIR}/_ext/557432624/swt.o ${OBJECTDIR}/_ext/557432624/btn.o ${OBJECTDIR}/_ext/557432624/utils.o ${OBJECTDIR}/_ext/557432624/ssd.o
 
 # Source Files
-SOURCEFILES=mcc_generated_files/interrupt_manager.c mcc_generated_files/mcc.c mcc_generated_files/pin_manager.c mcc_generated_files/adc1.c mcc_generated_files/oc1.c mcc_generated_files/tmr2.c mcc_generated_files/tmr3.c main.c
+SOURCEFILES=mcc_generated_files/interrupt_manager.c mcc_generated_files/mcc.c mcc_generated_files/pin_manager.c mcc_generated_files/adc1.c mcc_generated_files/oc1.c mcc_generated_files/tmr2.c mcc_generated_files/tmr3.c /home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/S4-GE-APP6.c /home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/lcd.c /home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/swt.c /home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/btn.c /home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/utils.c /home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/ssd.c
 
 
 
@@ -149,11 +149,41 @@ ${OBJECTDIR}/mcc_generated_files/tmr3.o: mcc_generated_files/tmr3.c  .generated_
 	@${RM} ${OBJECTDIR}/mcc_generated_files/tmr3.o 
 	${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/mcc_generated_files/tmr3.o.d" -o ${OBJECTDIR}/mcc_generated_files/tmr3.o mcc_generated_files/tmr3.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
 	
-${OBJECTDIR}/main.o: main.c  .generated_files/a550a53b68f977900d8385b6aeac757b8a58e067.flag .generated_files/71b2fa7f85a22426d8b136d9a94b6b5776fdc3b0.flag
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/main.o.d 
-	@${RM} ${OBJECTDIR}/main.o 
-	${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/main.o.d" -o ${OBJECTDIR}/main.o main.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
+${OBJECTDIR}/_ext/557432624/S4-GE-APP6.o: /home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/S4-GE-APP6.c  .generated_files/7f435d244c8c6e9dcedaf6e769e3244ad8a2da44.flag .generated_files/71b2fa7f85a22426d8b136d9a94b6b5776fdc3b0.flag
+	@${MKDIR} "${OBJECTDIR}/_ext/557432624" 
+	@${RM} ${OBJECTDIR}/_ext/557432624/S4-GE-APP6.o.d 
+	@${RM} ${OBJECTDIR}/_ext/557432624/S4-GE-APP6.o 
+	${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/_ext/557432624/S4-GE-APP6.o.d" -o ${OBJECTDIR}/_ext/557432624/S4-GE-APP6.o /home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/S4-GE-APP6.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
+	
+${OBJECTDIR}/_ext/557432624/lcd.o: /home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/lcd.c  .generated_files/7d8562a48850c254b4190425cd986a661722346a.flag .generated_files/71b2fa7f85a22426d8b136d9a94b6b5776fdc3b0.flag
+	@${MKDIR} "${OBJECTDIR}/_ext/557432624" 
+	@${RM} ${OBJECTDIR}/_ext/557432624/lcd.o.d 
+	@${RM} ${OBJECTDIR}/_ext/557432624/lcd.o 
+	${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/_ext/557432624/lcd.o.d" -o ${OBJECTDIR}/_ext/557432624/lcd.o /home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/lcd.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
+	
+${OBJECTDIR}/_ext/557432624/swt.o: /home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/swt.c  .generated_files/b5030d936fc8f7878b0cd8acbb57f8259ca74c25.flag .generated_files/71b2fa7f85a22426d8b136d9a94b6b5776fdc3b0.flag
+	@${MKDIR} "${OBJECTDIR}/_ext/557432624" 
+	@${RM} ${OBJECTDIR}/_ext/557432624/swt.o.d 
+	@${RM} ${OBJECTDIR}/_ext/557432624/swt.o 
+	${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/_ext/557432624/swt.o.d" -o ${OBJECTDIR}/_ext/557432624/swt.o /home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/swt.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
+	
+${OBJECTDIR}/_ext/557432624/btn.o: /home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/btn.c  .generated_files/586416c3473de010b54edded117a56985317e051.flag .generated_files/71b2fa7f85a22426d8b136d9a94b6b5776fdc3b0.flag
+	@${MKDIR} "${OBJECTDIR}/_ext/557432624" 
+	@${RM} ${OBJECTDIR}/_ext/557432624/btn.o.d 
+	@${RM} ${OBJECTDIR}/_ext/557432624/btn.o 
+	${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/_ext/557432624/btn.o.d" -o ${OBJECTDIR}/_ext/557432624/btn.o /home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/btn.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
+	
+${OBJECTDIR}/_ext/557432624/utils.o: /home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/utils.c  .generated_files/77789a83fedf3d7aad6bf20d9219e769bc9c596c.flag .generated_files/71b2fa7f85a22426d8b136d9a94b6b5776fdc3b0.flag
+	@${MKDIR} "${OBJECTDIR}/_ext/557432624" 
+	@${RM} ${OBJECTDIR}/_ext/557432624/utils.o.d 
+	@${RM} ${OBJECTDIR}/_ext/557432624/utils.o 
+	${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/_ext/557432624/utils.o.d" -o ${OBJECTDIR}/_ext/557432624/utils.o /home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/utils.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
+	
+${OBJECTDIR}/_ext/557432624/ssd.o: /home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/ssd.c  .generated_files/e86ad23e32649546e5b297271359514eed04d3dd.flag .generated_files/71b2fa7f85a22426d8b136d9a94b6b5776fdc3b0.flag
+	@${MKDIR} "${OBJECTDIR}/_ext/557432624" 
+	@${RM} ${OBJECTDIR}/_ext/557432624/ssd.o.d 
+	@${RM} ${OBJECTDIR}/_ext/557432624/ssd.o 
+	${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/_ext/557432624/ssd.o.d" -o ${OBJECTDIR}/_ext/557432624/ssd.o /home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/ssd.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
 	
 else
 ${OBJECTDIR}/mcc_generated_files/interrupt_manager.o: mcc_generated_files/interrupt_manager.c  .generated_files/2caf61e62d7179e928b3b92721cbba8c0f7f3fc0.flag .generated_files/71b2fa7f85a22426d8b136d9a94b6b5776fdc3b0.flag
@@ -198,11 +228,41 @@ ${OBJECTDIR}/mcc_generated_files/tmr3.o: mcc_generated_files/tmr3.c  .generated_
 	@${RM} ${OBJECTDIR}/mcc_generated_files/tmr3.o 
 	${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/mcc_generated_files/tmr3.o.d" -o ${OBJECTDIR}/mcc_generated_files/tmr3.o mcc_generated_files/tmr3.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
 	
-${OBJECTDIR}/main.o: main.c  .generated_files/a89128801782f3eb14f867745937f38d23caa844.flag .generated_files/71b2fa7f85a22426d8b136d9a94b6b5776fdc3b0.flag
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/main.o.d 
-	@${RM} ${OBJECTDIR}/main.o 
-	${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/main.o.d" -o ${OBJECTDIR}/main.o main.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
+${OBJECTDIR}/_ext/557432624/S4-GE-APP6.o: /home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/S4-GE-APP6.c  .generated_files/480f7c851fce6376901d5ca28f1f115ea927f90d.flag .generated_files/71b2fa7f85a22426d8b136d9a94b6b5776fdc3b0.flag
+	@${MKDIR} "${OBJECTDIR}/_ext/557432624" 
+	@${RM} ${OBJECTDIR}/_ext/557432624/S4-GE-APP6.o.d 
+	@${RM} ${OBJECTDIR}/_ext/557432624/S4-GE-APP6.o 
+	${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/_ext/557432624/S4-GE-APP6.o.d" -o ${OBJECTDIR}/_ext/557432624/S4-GE-APP6.o /home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/S4-GE-APP6.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
+	
+${OBJECTDIR}/_ext/557432624/lcd.o: /home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/lcd.c  .generated_files/af18b4b144dbf7bc16746ae710284dbee1c7dd1c.flag .generated_files/71b2fa7f85a22426d8b136d9a94b6b5776fdc3b0.flag
+	@${MKDIR} "${OBJECTDIR}/_ext/557432624" 
+	@${RM} ${OBJECTDIR}/_ext/557432624/lcd.o.d 
+	@${RM} ${OBJECTDIR}/_ext/557432624/lcd.o 
+	${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/_ext/557432624/lcd.o.d" -o ${OBJECTDIR}/_ext/557432624/lcd.o /home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/lcd.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
+	
+${OBJECTDIR}/_ext/557432624/swt.o: /home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/swt.c  .generated_files/ab5f022b075329274f7348e1a9f1ee0eee7d636c.flag .generated_files/71b2fa7f85a22426d8b136d9a94b6b5776fdc3b0.flag
+	@${MKDIR} "${OBJECTDIR}/_ext/557432624" 
+	@${RM} ${OBJECTDIR}/_ext/557432624/swt.o.d 
+	@${RM} ${OBJECTDIR}/_ext/557432624/swt.o 
+	${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/_ext/557432624/swt.o.d" -o ${OBJECTDIR}/_ext/557432624/swt.o /home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/swt.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
+	
+${OBJECTDIR}/_ext/557432624/btn.o: /home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/btn.c  .generated_files/1eefd84ad95872d4f22c89bc2db31e2b2f912514.flag .generated_files/71b2fa7f85a22426d8b136d9a94b6b5776fdc3b0.flag
+	@${MKDIR} "${OBJECTDIR}/_ext/557432624" 
+	@${RM} ${OBJECTDIR}/_ext/557432624/btn.o.d 
+	@${RM} ${OBJECTDIR}/_ext/557432624/btn.o 
+	${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/_ext/557432624/btn.o.d" -o ${OBJECTDIR}/_ext/557432624/btn.o /home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/btn.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
+	
+${OBJECTDIR}/_ext/557432624/utils.o: /home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/utils.c  .generated_files/8d9f28a7e223b591ef9f1d10967ac34354c88414.flag .generated_files/71b2fa7f85a22426d8b136d9a94b6b5776fdc3b0.flag
+	@${MKDIR} "${OBJECTDIR}/_ext/557432624" 
+	@${RM} ${OBJECTDIR}/_ext/557432624/utils.o.d 
+	@${RM} ${OBJECTDIR}/_ext/557432624/utils.o 
+	${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/_ext/557432624/utils.o.d" -o ${OBJECTDIR}/_ext/557432624/utils.o /home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/utils.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
+	
+${OBJECTDIR}/_ext/557432624/ssd.o: /home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/ssd.c  .generated_files/4be3eede228f0328c3badfa12381cb20d8bc60c0.flag .generated_files/71b2fa7f85a22426d8b136d9a94b6b5776fdc3b0.flag
+	@${MKDIR} "${OBJECTDIR}/_ext/557432624" 
+	@${RM} ${OBJECTDIR}/_ext/557432624/ssd.o.d 
+	@${RM} ${OBJECTDIR}/_ext/557432624/ssd.o 
+	${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/_ext/557432624/ssd.o.d" -o ${OBJECTDIR}/_ext/557432624/ssd.o /home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/ssd.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
 	
 endif
 
