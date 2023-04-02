@@ -11,9 +11,9 @@ def header_coupe_bande(coupe_bande_Q2_5,filename):
     # ouvrir le fichier pour l'écriture
     with open(filename, "w") as file:
         # écrire les directives de préprocesseur pour éviter une inclusion multiple du fichier header
-        file.write("#define IIR_QXY_RES_NBITS 13 // Q2.13\n\n")
-        file.write("#ifndef filterIIRcoeffs_TEST_H\n")
-        file.write("#define filterIIRcoeffs_TEST_H\n\n")
+        file.write("#define IIR_QXY_RES_NBITS 13 // Q2.13\n")
+        # file.write("#ifndef filterIIRcoeffs_TEST_H\n")
+        # file.write("#define filterIIRcoeffs_TEST_H\n\n")
 
         # écrire le tableau de coefficients
         file.write("#define N_SOS_SECTIONS {}\n".format(len(coupe_bande_Q2_5) // 6))

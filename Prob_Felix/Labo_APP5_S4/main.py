@@ -28,7 +28,7 @@ PY2C(PH_Q2_13,rootdir + 'H3.h',complex=1,PYtype=int,Ctype='int32c',includesandde
 PY2C(Passe_bande_1k_Q2_13,rootdir + 'H6.h',complex=1,PYtype=int,Ctype='int32c',includesanddef=['#include "dsplib_dsp.h"'],varname='H6', gard='FIR_PASSE_BANDE_1K_H', static=1)
 PY2C(Passe_bande_2k_Q2_13,rootdir + 'H5.h',complex=1,PYtype=int,Ctype='int32c',includesanddef=['#include "dsplib_dsp.h"'],varname='H5', gard='FIR_PASSE_BANDE_1K_H', static=1)
 PY2C(Passe_bande_3500_Q2_13,rootdir + 'H4.h',complex=1,PYtype=int,Ctype='int32c',includesanddef=['#include "dsplib_dsp.h"'],varname='H4', gard='FIR_PASSE_BANDE_3500_H', static=1)
-header_coupe_bande(coupe_bande_Q2_5,rootdir+ 'filterIIRcoeffs_TEST.h')
+header_coupe_bande(coupe_bande_Q2_5,rootdir+ 'filterIIRcoeffs.h')
 #genrate hanning window
 length = 768
 hanning = np.hanning(length)
