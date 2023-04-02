@@ -39,11 +39,9 @@ def fct_filtre_elliptique(fe: float):
         btype="bandstop",
         output="sos",
     )
-    coupe_bande_fft = np.fft.fft(H_transfert)
-    coupe_bande_Q2_5 = fct_format_Q2_5(coupe_bande_fft)
-
-
-
+    #print(H_transfert)
+    coupe_bande_Q2_5 = fct_format_Q2_5(H_transfert)
+    #print(coupe_bande_Q2_5)
     H_transfert = H_transfert * np.power(2, 5)
     H_transfert = np.round(H_transfert)
     H_QX = H_transfert / np.power(2, 5)
