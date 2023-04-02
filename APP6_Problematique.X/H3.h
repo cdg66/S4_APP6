@@ -1,4 +1,4 @@
-/*File name: Low_pass_filterIIRcoeffs.h
+/*File name: H3.h
  *Author:Felix
  *Python script author:Claude-David Gaudreault
  *Machine:nt
@@ -8,7 +8,7 @@
 #ifdef FIR_HIGH_PASS_H
 #define FIR_HIGH_PASS_H
 #include "dsplib_dsp.h"
-   static int32c Coefficient_Fir[255]= {
+   static int32c H3[255]= {
 {0,0},
 {0,0},
 {0,0},

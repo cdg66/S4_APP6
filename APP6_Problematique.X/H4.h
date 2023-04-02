@@ -1,4 +1,4 @@
-/*File name: Bande_passe_3500_filterIIRcoeffs.h
+/*File name: H4.h
  *Author:Felix
  *Python script author:Claude-David Gaudreault
  *Machine:nt
@@ -8,7 +8,7 @@
 #ifdef FIR_PASSE_BANDE_3500_H
 #define FIR_PASSE_BANDE_3500_H
 #include "dsplib_dsp.h"
-   static int32c Coefficient_Fir[255]= {
+   static int32c H4[255]= {
 {0,0},
 {0,0},
 {0,0},

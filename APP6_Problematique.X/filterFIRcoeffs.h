@@ -1026,11 +1026,11 @@ const int32c H7[FFT_LEN] = {
   {50, 8192},
   {5810, 5775},
 };
-// Bandpass filter, fcLow = 500 Hz,fcHigh = 1500 Hz, fe = 20000 Hz
+// Bandpass filter, fc = 1000 Hz,fcHigh = 1500 Hz, fe = 20000 Hz
 const int32c H6[FFT_LEN] = {0};
-// Bandpass filter, fcLow = 1500 Hz,fcHigh = 2500 Hz, fe = 20000 Hz
+// Bandpass filter, fc = 2000 Hz,fcHigh = 2500 Hz, fe = 20000 Hz
 const int32c H5[FFT_LEN] = {0};
-// Bandpass filter, fcLow = 2500 Hz,fcHigh = 4500 Hz, fe = 20000 Hz
+// Bandpass filter, fc = 3500 Hz,fcHigh = 4500 Hz, fe = 20000 Hz
 const int32c H4[FFT_LEN] = {0};
 // Highpass filter, fc = 4490 Hz, fe = 20000 Hz
 const int32c H3[FFT_LEN] = {0};
