@@ -1,4 +1,4 @@
-/*File name: Coupe_bande_filterIIRcoeffs.h
+/*File name: Coupe_bande_FIR_coeffs.h
  *Author:Felix
  *Python script author:Claude-David Gaudreault
  *Machine:nt
@@ -8,7 +8,7 @@
 #ifdef FIR_COUPE_BANDE_H
 #define FIR_COUPE_BANDE_H
 #include "dsplib_dsp.h"
-   static int32c Coefficient_Fir[24]= {
+   static int32c Coefficient_IIR_Coupe_bande[24]= {
 {6,0},
 {1,-3},
 {86,147},

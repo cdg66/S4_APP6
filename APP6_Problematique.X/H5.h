@@ -1,4 +1,4 @@
-/*File name: Bande_passe_2k_filterIIRcoeffs.h
+/*File name: H5.h
  *Author:Felix
  *Python script author:Claude-David Gaudreault
  *Machine:nt
@@ -8,7 +8,7 @@
 #ifdef FIR_PASSE_BANDE_1K_H
 #define FIR_PASSE_BANDE_1K_H
 #include "dsplib_dsp.h"
-   static int32c Coefficient_Fir[255]= {
+   static int32c H5[255]= {
 {0,0},
 {0,0},
 {0,0},

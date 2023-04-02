@@ -3,7 +3,7 @@ import numpy as np
 def hanning_header():
     filename = 'window_header.h'
     varname = 'WINDOW'
-    length = 255
+    length = 768
     # Generate Hanning window
     hanning = np.hanning(length)
 

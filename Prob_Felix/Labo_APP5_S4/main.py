@@ -11,13 +11,17 @@ coupe_bande_Q2_5 = fct_filtre_elliptique(fe)
 
 PB_Q2_13,PH_Q2_13,Passe_bande_1k_Q2_13,Passe_bande_2k_Q2_13,Passe_bande_3500_Q2_13 = filtre_FIR()
 
-
-PY2C(PB_Q2_13,'High_pass_filterIIRcoeffs.h',PYtype=int,Ctype='int32c',includesanddef=['#include "dsplib_dsp.h"'],varname='Coefficient_Fir', gard='FIR_LOW_PASS_H', static=1)
-PY2C(PH_Q2_13,'Low_pass_filterIIRcoeffs.h',PYtype=int,Ctype='int32c',includesanddef=['#include "dsplib_dsp.h"'],varname='Coefficient_Fir', gard='FIR_HIGH_PASS_H', static=1)
-PY2C(Passe_bande_1k_Q2_13,'Bande_passe_1k_filterIIRcoeffs.h',PYtype=int,Ctype='int32c',includesanddef=['#include "dsplib_dsp.h"'],varname='Coefficient_Fir', gard='FIR_PASSE_BANDE_1K_H', static=1)
-PY2C(Passe_bande_2k_Q2_13,'Bande_passe_2k_filterIIRcoeffs.h',PYtype=int,Ctype='int32c',includesanddef=['#include "dsplib_dsp.h"'],varname='Coefficient_Fir', gard='FIR_PASSE_BANDE_1K_H', static=1)
-PY2C(Passe_bande_3500_Q2_13,'Bande_passe_3500_filterIIRcoeffs.h',PYtype=int,Ctype='int32c',includesanddef=['#include "dsplib_dsp.h"'],varname='Coefficient_Fir', gard='FIR_PASSE_BANDE_3500_H', static=1)
-PY2C(coupe_bande_Q2_5,'Coupe_bande_filterIIRcoeffs.h',PYtype=int,Ctype='int32c',includesanddef=['#include "dsplib_dsp.h"'],varname='Coefficient_Fir', gard='FIR_COUPE_BANDE_H', static=1)
+# H7 low_passe
+# H6 Bandpass filter 1000HZ
+# H5 Bandpass filter 2000HZ
+# H4 Bandpass filter 3500HZ
+# H3 hight_pass
+PY2C(PB_Q2_13,'H7.h',PYtype=int,Ctype='int32c',includesanddef=['#include "dsplib_dsp.h"'],varname='H7', gard='FIR_LOW_PASS_H', static=1)
+PY2C(PH_Q2_13,'H3.h',PYtype=int,Ctype='int32c',includesanddef=['#include "dsplib_dsp.h"'],varname='H3', gard='FIR_HIGH_PASS_H', static=1)
+PY2C(Passe_bande_1k_Q2_13,'H6.h',PYtype=int,Ctype='int32c',includesanddef=['#include "dsplib_dsp.h"'],varname='H6', gard='FIR_PASSE_BANDE_1K_H', static=1)
+PY2C(Passe_bande_2k_Q2_13,'H5.h',PYtype=int,Ctype='int32c',includesanddef=['#include "dsplib_dsp.h"'],varname='H5', gard='FIR_PASSE_BANDE_1K_H', static=1)
+PY2C(Passe_bande_3500_Q2_13,'H4.h',PYtype=int,Ctype='int32c',includesanddef=['#include "dsplib_dsp.h"'],varname='H4', gard='FIR_PASSE_BANDE_3500_H', static=1)
+PY2C(coupe_bande_Q2_5,'Coupe_bande_FIR_coeffs.h',PYtype=int,Ctype='int32c',includesanddef=['#include "dsplib_dsp.h"'],varname='Coefficient_IIR_Coupe_bande', gard='FIR_COUPE_BANDE_H', static=1)
 hanning_header()
 
 
