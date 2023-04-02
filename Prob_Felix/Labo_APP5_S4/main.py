@@ -4,6 +4,7 @@ import numpy as np
 from window import*
 from C_header import PY2C
 from creation_Filtrage_FIR import *
+import os
 #from format_QX.Y import *
 # plt.ion()  # Comment out if using scientific mode!
 fe = 20000
@@ -16,13 +17,25 @@ PB_Q2_13,PH_Q2_13,Passe_bande_1k_Q2_13,Passe_bande_2k_Q2_13,Passe_bande_3500_Q2_
 # H5 Bandpass filter 2000HZ
 # H4 Bandpass filter 3500HZ
 # H3 hight_pass
-PY2C(PB_Q2_13,'H7.h',PYtype=int,Ctype='int32c',includesanddef=['#include "dsplib_dsp.h"'],varname='H7', gard='FIR_LOW_PASS_H', static=1)
-PY2C(PH_Q2_13,'H3.h',PYtype=int,Ctype='int32c',includesanddef=['#include "dsplib_dsp.h"'],varname='H3', gard='FIR_HIGH_PASS_H', static=1)
-PY2C(Passe_bande_1k_Q2_13,'H6.h',PYtype=int,Ctype='int32c',includesanddef=['#include "dsplib_dsp.h"'],varname='H6', gard='FIR_PASSE_BANDE_1K_H', static=1)
-PY2C(Passe_bande_2k_Q2_13,'H5.h',PYtype=int,Ctype='int32c',includesanddef=['#include "dsplib_dsp.h"'],varname='H5', gard='FIR_PASSE_BANDE_1K_H', static=1)
-PY2C(Passe_bande_3500_Q2_13,'H4.h',PYtype=int,Ctype='int32c',includesanddef=['#include "dsplib_dsp.h"'],varname='H4', gard='FIR_PASSE_BANDE_3500_H', static=1)
-PY2C(coupe_bande_Q2_5,'Coupe_bande_FIR_coeffs.h',PYtype=int,Ctype='int32c',includesanddef=['#include "dsplib_dsp.h"'],varname='Coefficient_IIR_Coupe_bande', gard='FIR_COUPE_BANDE_H', static=1)
-hanning_header()
+machine = os.name
+rootdir = ""
+if (machine == 'nt'):
+    rootdir = 'C:/Users/Felix/Documents/GitHub/S4_APP6/APP6_Problematique.X/'
+if (machine == 'posix'):
+    rootdir = '../../APP6_Problematique.X/'
+
+PY2C(PB_Q2_13,rootdir + 'H7.h',complex=1,PYtype=int,Ctype='int32c',includesanddef=['#include "dsplib_dsp.h"'],varname='H7', gard='FIR_LOW_PASS_H', static=1)
+PY2C(PH_Q2_13,rootdir + 'H3.h',complex=1,PYtype=int,Ctype='int32c',includesanddef=['#include "dsplib_dsp.h"'],varname='H3', gard='FIR_HIGH_PASS_H', static=1)
+PY2C(Passe_bande_1k_Q2_13,rootdir + 'H6.h',complex=1,PYtype=int,Ctype='int32c',includesanddef=['#include "dsplib_dsp.h"'],varname='H6', gard='FIR_PASSE_BANDE_1K_H', static=1)
+PY2C(Passe_bande_2k_Q2_13,rootdir + 'H5.h',complex=1,PYtype=int,Ctype='int32c',includesanddef=['#include "dsplib_dsp.h"'],varname='H5', gard='FIR_PASSE_BANDE_1K_H', static=1)
+PY2C(Passe_bande_3500_Q2_13,rootdir + 'H4.h',complex=1,PYtype=int,Ctype='int32c',includesanddef=['#include "dsplib_dsp.h"'],varname='H4', gard='FIR_PASSE_BANDE_3500_H', static=1)
+PY2C(coupe_bande_Q2_5,rootdir + 'Coupe_bande_FIR_coeffs.h',complex=1,PYtype=int,Ctype='int32c',includesanddef=['#include "dsplib_dsp.h"'],varname='Coefficient_IIR_Coupe_bande', gard='FIR_COUPE_BANDE_H', static=1)
+#genrate hanning window
+length = 768
+hanning = np.hanning(length)
+hanning = fct_format_Q2_13(hanning)
+PY2C(hanning,rootdir + 'window_header.h',complex=0,PYtype=int,Ctype='int32_t',varname='window', gard='WINDOW_HEADER_H', static=0)
+#hanning_header(rootdir + 'window_header.h')
 
 
 

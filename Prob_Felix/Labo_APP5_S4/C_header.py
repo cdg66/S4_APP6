@@ -5,7 +5,7 @@
 
 import os
 import getpass
-def PY2C( array, filename='header.h',PYtype=int,Ctype='int32_t',varname='Coefficient', gard='HEADER_H',blocktitle='',includesanddef=['#include <stdint.h>'], static=1):
+def PY2C( array, filename='header.h',PYtype=int,Ctype='int32_t',varname='Coefficient',complex=0, gard='HEADER_H',blocktitle='',includesanddef=['#include <stdint.h>'], static=1):
     machine = os.name
     if (machine == 'nt'):
         nl = '\n\r'
@@ -25,7 +25,7 @@ def PY2C( array, filename='header.h',PYtype=int,Ctype='int32_t',varname='Coeffic
         ' */',nl
     ]
 
-    headder = open('C:/Users/Felix/Documents/GitHub/S4_APP6/APP6_Problematique.X/' + filename, "w")
+    headder = open(filename, "w")
     #write title and info
     if (blocktitle == ''): # title block not overwrited
         headder.writelines(titleblock)
@@ -35,7 +35,7 @@ def PY2C( array, filename='header.h',PYtype=int,Ctype='int32_t',varname='Coeffic
             headder.writelines([blocktitle[i],nl])
         headder.writelines(['*/', nl])
     # write start gard
-    headder.writelines(['#ifdef ',gard, nl])
+    headder.writelines(['#ifndef ',gard, nl])
     headder.writelines(['#define ', gard,nl])
     #write includes
     for i in range(len(includesanddef)):
@@ -48,9 +48,15 @@ def PY2C( array, filename='header.h',PYtype=int,Ctype='int32_t',varname='Coeffic
     #write varname
     headder.writelines([varname,'[',str(len(array)),']', '= {',nl])
     #write array
-    for i in range(len(array)-1):
-        headder.writelines(['{',str(PYtype(array.real[i])),',',str(PYtype(array.imag[i])),'},',nl])
-    i = i+1
-    headder.writelines(['{',str(PYtype(array.real[i])),',',str(PYtype(array.imag[i])),'}};', nl])
+    if (complex == 1):
+        for i in range(len(array)-1):
+            headder.writelines(['{',str(PYtype(array.real[i])),',',str(PYtype(array.imag[i])),'},',nl])
+        i = i+1
+        headder.writelines(['{',str(PYtype(array.real[i])),',',str(PYtype(array.imag[i])),'}};', nl])
+    if (complex == 0):
+        for i in range(len(array) - 1):
+            headder.writelines(['       ',str(PYtype(array[i])), ',',nl])
+        i = i + 1
+        headder.writelines(['       ',str(PYtype(array[i])),'};', nl])
     # write end gard
     headder.writelines(['#endif ', gard])

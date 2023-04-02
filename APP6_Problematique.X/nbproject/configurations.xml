@@ -25,6 +25,12 @@
       <itemPath>swt.h</itemPath>
       <itemPath>utils.h</itemPath>
       <itemPath>window.h</itemPath>
+      <itemPath>/home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/H3.h</itemPath>
+      <itemPath>/home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/H4.h</itemPath>
+      <itemPath>/home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/H5.h</itemPath>
+      <itemPath>/home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/H6.h</itemPath>
+      <itemPath>/home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/H7.h</itemPath>
+      <itemPath>/home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/window_header.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"

@@ -71,7 +71,8 @@
 
 // Window and FIR filter transfer functions, scaled by 2^H_QXY_RES_NBITS for fixed-point encoding
 #include "filterFIRcoeffs.h"
-#include "window.h"
+#include "window_header.h"
+//#include "window.h"
 
 // Global variables
 int32_t *currentInBuffer, *currentOutBuffer, bufferCount, PR2_Global;
@@ -289,7 +290,7 @@ int main(void) {
                 //                of the built-in division by N in the PIC32 DSP Library implementation
                 //                of the FFT algorithm (See DS51685E, p.118), else roundoff error 
                 //                decreases resolution of X[k] result.
-
+                
                 // *** POINT B1: Calculate X[k] with PIC32 DSP Library FFT function call
 
                 // *** POINT B2: FIR Filtering, calculate Y* = (HX)*, where "*" is the complex conjugate
