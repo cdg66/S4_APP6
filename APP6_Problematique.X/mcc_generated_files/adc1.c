@@ -149,6 +149,13 @@ void __ISR ( _ADC_VECTOR, IPL1AUTO ) ADC_1 (void)
             //int a1 = IIRCoeffs[nSOS][4];
             //int a2 = IIRCoeffs[nSOS][5];
             //les coeffcient a doivent etre negatif
+            
+            //y = b0*x+IIRv[nSOS];
+            //y = y >> 13;
+            //IIRv[nSOS] = b1*x-a1*y+IIRu[nSOS];
+            //IIRu[nSOS] = b2*x-a2*y;
+            
+            // Update the input for the next SOS section
             y = b0*x+IIRv[nSOS];
             y = y >> 13;
             //Uncomment this line to release hell
@@ -156,12 +163,7 @@ void __ISR ( _ADC_VECTOR, IPL1AUTO ) ADC_1 (void)
             IIRv[nSOS] = b1*x-a1*y+IIRu[nSOS];
             IIRu[nSOS] = b2*x-a2*y;
             
-            //y = IIRCoeffs[nSOS][0]*x+IIRv[nSOS];
-            //y = y >> 13;
-            //IIRv[nSOS] = IIRCoeffs[nSOS][1]*x-IIRCoeffs[nSOS][4]*y+IIRu[nSOS];
-            //IIRu[nSOS] = IIRCoeffs[nSOS][2]*x-IIRCoeffs[nSOS][5]*y;
-            
-            // Update the input for the next SOS section
+
             x = y;
         }
 

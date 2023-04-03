@@ -11,7 +11,7 @@ def fct_filtre_elliptique(fe: float):
     fc_low: float = 950
     fc_high: float = 1050
     filter_order: int = 4
-    pass_band_ripple_db: float = 1
+    pass_band_ripple_db: float = 0.75
     stop_band_attn_db: float = 75
 
     # Filter coefficients
@@ -42,6 +42,7 @@ def fct_filtre_elliptique(fe: float):
     )
 
     coupe_bande_Q2_13 = fct_format_Q2_13(H_transfert)
+    coupe_bande_Q2_13_div = coupe_bande_Q2_13 / np.power(2, 13)
     coupe_bande_Q2_5 = fct_format_Q2_5(H_transfert)
 
     H_transfert = H_transfert * np.power(2, 5)
@@ -50,7 +51,9 @@ def fct_filtre_elliptique(fe: float):
 
     # Frequency response
     [w_Q25, h_dft_Q25] = signal.sosfreqz(H_QX, worN=100000, fs=fe)
+    [w_Q13_div, h_dft_Q13_div] = signal.sosfreqz(coupe_bande_Q2_13_div, worN=100000, fs=fe)
     plt.semilogx(w_Q25, 20 * np.log10(np.abs(h_dft_Q25)), '--', label="Q2.5 coeffs")
+    plt.semilogx(w_Q13_div, 20 * np.log10(np.abs(h_dft_Q13_div)), '--', label="Q2.13 coeffs")
 
     plt.title(f"Réponse en fréquence du filtre elliptique (ordre {filter_order})")
     plt.xlabel("Fréquence [Hz]")
