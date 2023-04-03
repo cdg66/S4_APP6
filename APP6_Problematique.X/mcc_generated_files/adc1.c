@@ -143,13 +143,10 @@ void __ISR ( _ADC_VECTOR, IPL1AUTO ) ADC_1 (void)
             float a1 = IIRCoeffs[N_SOS_SECTIONS][4];
             float a2 = IIRCoeffs[N_SOS_SECTIONS][5];
             //
-            u[n] = IIRCoeffs[N_SOS_SECTIONS][2]*x[n] + 
-            //y[n] = i[0]*x[n-1]
-			
-			// v[n] = 
-			
-			// u[n] = 
-             
+            v = b1*x+a1*y+u
+            u = b2*x+a2*y
+			y = b0*x+v
+                    
             // Update the input for the next SOS section
             x = y;
         }
