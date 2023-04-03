@@ -6,12 +6,15 @@ from C_header import PY2C
 from creation_Filtrage_FIR import *
 from Coupe_bande_header import*
 import os
+from MplabSimul import H7_simul as test
 #from format_QX.Y import *
 # plt.ion()  # Comment out if using scientific mode!
 fe = 20000
 coupe_bande_Q2_5 = fct_filtre_elliptique(fe)
 
 PB_Q2_13,PH_Q2_13,Passe_bande_1k_Q2_13,Passe_bande_2k_Q2_13,Passe_bande_3500_Q2_13 = filtre_FIR()
+test(PB_Q2_13,1024,fe)
+
 # H7 low_passe
 # H6 Bandpass filter 1000HZ
 # H5 Bandpass filter 2000HZ

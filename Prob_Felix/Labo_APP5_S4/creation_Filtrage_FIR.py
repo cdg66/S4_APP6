@@ -7,8 +7,9 @@ from Format_Q2_5 import*
 
 def filtre_FIR():
     Fe = 20000
-    N = 256
-    n = N-1
+    N = 1024
+    n = N
+    n2 = N+1
 
     #passe-bas
     fcpb = 500
@@ -21,7 +22,7 @@ def filtre_FIR():
     #filtre passe-haut
     fcph = 4490
     filtre_p_h: np.ndarray = signal.firwin(
-        numtaps=n, cutoff=fcph, pass_zero="highpass", window="blackman", fs=Fe
+        numtaps=n2, cutoff=fcph, pass_zero="highpass", window="blackman", fs=Fe
     )
     PH_Q2_13 = fct_format_Q2_13(filtre_p_h)
 
@@ -32,7 +33,7 @@ def filtre_FIR():
     f_low1 = fc1 - bw1
     f_high1 = fc1 + bw1
     passe_bande_1000 = signal.firwin(
-        numtaps=n, cutoff=[f_low1, f_high1], pass_zero=False, window="blackman", fs=Fe
+        numtaps=N, cutoff=[f_low1, f_high1], pass_zero=False, window="blackman", fs=Fe
     )
     Passe_bande_1k_Q2_13 = fct_format_Q2_13(passe_bande_1000)
 
@@ -42,7 +43,7 @@ def filtre_FIR():
     f_low2 = fc2 - bw2
     f_high2 = fc2 + bw2
     passe_bande_2000 = signal.firwin(
-        numtaps=n, cutoff=[f_low2, f_high2], pass_zero=False, window="blackman", fs=Fe
+        numtaps=N, cutoff=[f_low2, f_high2], pass_zero=False, window="blackman", fs=Fe
     )
     Passe_bande_2k_Q2_13 = fct_format_Q2_13(passe_bande_2000)
 
@@ -52,7 +53,7 @@ def filtre_FIR():
     f_low3 = fc3 - bw3
     f_high3 = fc3 + bw3
     passe_bande_3500 = signal.firwin(
-        numtaps=n, cutoff=[f_low3, f_high3], pass_zero=False, window="blackman", fs=Fe
+        numtaps=N, cutoff=[f_low3, f_high3], pass_zero=False, window="blackman", fs=Fe
     )
     Passe_bande_3500_Q2_13 = fct_format_Q2_13(passe_bande_3500)
     fig, (ax2, ax3) = plt.subplots(2, 1, layout='constrained',sharey=True)
