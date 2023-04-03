@@ -136,17 +136,18 @@ void __ISR ( _ADC_VECTOR, IPL1AUTO ) ADC_1 (void)
     if (IIREnabled) {
         y = x;
         for (nSOS = 0; nSOS < N_SOS_SECTIONS; nSOS++) {
-            float b0 = IIRCoeffs[N_SOS_SECTIONS][0]; 
-            float b1 = IIRCoeffs[N_SOS_SECTIONS][1]; 
-            float b0 = IIRCoeffs[N_SOS_SECTIONS][2]; 
-            float a0 = IIRCoeffs[N_SOS_SECTIONS][3];
-            float a1 = IIRCoeffs[N_SOS_SECTIONS][4];
-            float a2 = IIRCoeffs[N_SOS_SECTIONS][5];
+            int b0 = IIRCoeffs[nSOS][0]; 
+            int b1 = IIRCoeffs[nSOS][1]; 
+            int b2 = IIRCoeffs[nSOS][2]; 
+            int a0 = IIRCoeffs[nSOS][3];
+            int a1 = IIRCoeffs[nSOS][4];
+            int a2 = IIRCoeffs[nSOS][5];
             //
-            v = b1*x+a1*y+u
-            u = b2*x+a2*y
-			y = b0*x+v
-                    
+            y = b0*x+IIRv[nSOS];
+            y = y >> 13;
+            IIRv[nSOS] = b1*x-a1*y+IIRu[nSOS];
+            IIRu[nSOS] = b2*x-a2*y;
+            
             // Update the input for the next SOS section
             x = y;
         }
