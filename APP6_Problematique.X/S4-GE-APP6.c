@@ -301,11 +301,13 @@ int main(void) {
                 int samplepos = SIG_LEN - H_LEN;
                 for (n = 0; n < H_LEN; n++)
                 {
-                    //inFFT[n].re = (currentInBuffer[samplepos] * window[n]) >> (H_and_W_QXY_RES_NBITS - LOG2FFTLEN);
+                    ////inFFT[n].re = (currentInBuffer[samplepos] * window[n]) >> (H_and_W_QXY_RES_NBITS - LOG2FFTLEN);
                     inFFT[n].re = currentInBuffer[samplepos] * FFT_LEN;
                     inFFT[n].im = 0;
-                    debugBuffer5[n] = inFFT[n].re ;
+                    //debugBuffer5[n] = inFFT[n].re ;
                     //debugBuffer5[n] = currentInBuffer[samplepos];
+                    //inFFT[n].re = 0;
+                    //inFFT[n].im = 0;
                     samplepos++;
                 }
                 samplepos = 0;
@@ -314,7 +316,7 @@ int main(void) {
                     //inFFT[n].re = (previousInBuffer[samplepos] * window[n]) >> (H_and_W_QXY_RES_NBITS - LOG2FFTLEN);
                     inFFT[n].re = previousInBuffer[samplepos]  * FFT_LEN;
                     inFFT[n].im = 0;
-                    debugBuffer5[n] = inFFT[n].re;
+                    //debugBuffer5[n] = inFFT[n].re;
                     //debugBuffer5[n] = previousInBuffer[samplepos];
                     samplepos++;
                 }
@@ -339,9 +341,11 @@ int main(void) {
                 //calc_power_spectrum(inFFT, Y, FFT_LEN);
                 // *** POINT B4: Extract real part of the inverse FFT result and remove H QX.Y scaling,
 				// discard first block as per the "Overlap-and-save" method.
-                for(n=256;n < FFT_LEN; n++) // inverse real and imaginary part 
+                int buff = 0;
+                for(n=H_LEN;n < FFT_LEN; n++) 
                 {
-                    previousOutBuffer[n-256] = outFFT[n].re / 8192;
+                    previousOutBuffer[buff] = outFFT[n].re / 8192;
+                    buff++;
                     //YT[n] = inFFT[n+H_LEN].re / 8192;
                     
                 }
