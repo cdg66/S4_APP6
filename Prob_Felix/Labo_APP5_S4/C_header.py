@@ -14,7 +14,7 @@ def PY2C( array, filename='header.h',PYtype=int,Ctype='int32_t',varname='Coeffic
         nl = '\r'
     if (machine == 'java'):
         print('get fucked java user')
-        return
+        #return
     titleblock = [
         '/*',
         'File name: ',filename,nl,
