@@ -151,6 +151,8 @@ void __ISR ( _ADC_VECTOR, IPL1AUTO ) ADC_1 (void)
             //les coeffcient a doivent etre negatif
             y = b0*x+IIRv[nSOS];
             y = y >> 13;
+            //Uncomment this line to release hell
+            //y = y >> 5;
             IIRv[nSOS] = b1*x-a1*y+IIRu[nSOS];
             IIRu[nSOS] = b2*x-a2*y;
             

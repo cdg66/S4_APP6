@@ -35,7 +35,7 @@ PY2C(Passe_bande_2k_Q2_13,rootdir + 'H5.h',complex=1,PYtype=int,Ctype='int32c',i
 PY2C(Passe_bande_3500_Q2_13,rootdir + 'H4.h',complex=1,PYtype=int,Ctype='int32c',includesanddef=['#include "dsplib_dsp.h"'],varname='H4', gard='FIR_PASSE_BANDE_3500_H', static=1)
 header_coupe_bande(coupe_bande_Q2_13,rootdir+ 'filterIIRcoeffs.h')
 
-# Decommenter cette ligne pour pour fucker l'chien en Q2.5
+#Uncomment this line to release hell
 #header_coupe_bande(coupe_bande_Q2_5,rootdir+ 'filterIIRcoeffs.h')
 
 #genrate hanning window
