@@ -7,7 +7,7 @@ def H7_simul(H_transfert,N,fe):
     #H_transfert_congugate =fct_format_revert_Q2_13(H_transfert)
     H_transfert_congugate = np.conjugate(H_transfert)
     t = np.arange(0,N,1)
-    fsinus = 100
+    fsinus = 4490
 
     #gen input signal
     signal = np.sin(2*np.pi*fsinus*t/fe)
@@ -26,7 +26,7 @@ def H7_simul(H_transfert,N,fe):
     #plot X and x
     plt.subplot(221)
     plt.plot(t,signal)
-    plt.plot(t, FFT_sig)
+    plt.plot(t, np.abs(FFT_sig))
     plt.title("x(blue) an X(orange)")
     #plot H
     plt.subplot(222)
@@ -35,7 +35,7 @@ def H7_simul(H_transfert,N,fe):
     plt.title("H")
     #plot Y
     plt.subplot(223)
-    plt.plot(t,YX)
+    plt.plot(t,np.abs(YX))
     plt.title("Y")
 
     # plot y
