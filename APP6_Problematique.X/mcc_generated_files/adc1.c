@@ -129,16 +129,24 @@ void __ISR ( _ADC_VECTOR, IPL1AUTO ) ADC_1 (void)
     currentInBuffer[bufferCount] = x;
 
     // If IIR filtering is enabled, real-time calculation of the next output sample
+    // IIRCoeffs : coefficients (b0, b1, b2, a0, a1, a2) for N_SOS_SECTIONS cascaded SOS sections
+    //a0 : index 3
+    //a1 : index 4
+    //a1 : index 5
     if (IIREnabled) {
         y = x;
-         for (nSOS = 0; nSOS < N_SOS_SECTIONS; nSOS++) {
-            // *** POINT C1
-            
-			// y[n] = 
-			
-			// v[n] = 
-			
-			// u[n] = 
+        for (nSOS = 0; nSOS < N_SOS_SECTIONS; nSOS++) {
+            int b0 = IIRCoeffs[nSOS][0]; 
+            int b1 = IIRCoeffs[nSOS][1]; 
+            int b2 = IIRCoeffs[nSOS][2]; 
+            int a0 = IIRCoeffs[nSOS][3];
+            int a1 = IIRCoeffs[nSOS][4];
+            int a2 = IIRCoeffs[nSOS][5];
+            //
+            y = b0*x+IIRv[nSOS];
+            y = y >> 13;
+            IIRv[nSOS] = b1*x-a1*y+IIRu[nSOS];
+            IIRu[nSOS] = b2*x-a2*y;
             
             // Update the input for the next SOS section
             x = y;
