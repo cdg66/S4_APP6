@@ -73,7 +73,10 @@
 #include "filterFIRcoeffs.h"
 #include "window_header.h"
 //#include "window.h"
-
+#define XK debugBuffer1
+#define H debugBuffer2
+#define Y debugBuffer3
+#define YT debugBuffer4
 // Global variables
 int32_t *currentInBuffer, *currentOutBuffer, bufferCount, PR2_Global;
 bool inputBufferFull, IIREnabled;
@@ -81,7 +84,7 @@ bool inputBufferFull, IIREnabled;
 // Though this is BAD PROGRAMMING PRACTICE, define these arrays as
 // static (private) global variables for the MPLAB DMCI plug-in to see them
 static int32_t inBuffer1[SIG_LEN], inBuffer2[SIG_LEN], outBuffer1[SIG_LEN], outBuffer2[SIG_LEN],
-        debugBuffer1[FFT_LEN], debugBuffer2[FFT_LEN], Fe;
+        debugBuffer1[FFT_LEN], debugBuffer2[FFT_LEN],debugBuffer3[FFT_LEN],debugBuffer4[FFT_LEN], Fe;
 static int32c inFFT[FFT_LEN], outFFT[FFT_LEN], Htot[FFT_LEN], twiddles[FFT_LEN / 2];
 
 // Local function prototyping
@@ -290,17 +293,55 @@ int main(void) {
                 //                of the built-in division by N in the PIC32 DSP Library implementation
                 //                of the FFT algorithm (See DS51685E, p.118), else roundoff error 
                 //                decreases resolution of X[k] result.
+                int samplepos = SIG_LEN - H_LEN;
+                for (n = 0; n < H_LEN; n++)
+                {
+                    inFFT[n].re = currentInBuffer[samplepos] * FFT_LEN;
+                    inFFT[n].im = 0;
+                    //debugBuffer1[n] = inFFT[n].re ;
+                    //debugBuffer1[n] = currentInBuffer[samplepos];
+                    samplepos++;
+                }
+                samplepos = 0;
+                for (n = H_LEN; n < FFT_LEN; n++)
+                {
+                    inFFT[n].re = previousInBuffer[samplepos]  * FFT_LEN;
+                    inFFT[n].im = 0;
+                    //debugBuffer1[n] = inFFT[n].re;
+                    //debugBuffer1[n] = previousInBuffer[samplepos];
+                    samplepos++;
+                }
                 
+                    
                 // *** POINT B1: Calculate X[k] with PIC32 DSP Library FFT function call
-
+                mips_fft32(outFFT, inFFT, twiddles, Scratch, log2N);
+                calc_power_spectrum(outFFT, XK, FFT_LEN);
                 // *** POINT B2: FIR Filtering, calculate Y* = (HX)*, where "*" is the complex conjugate
                 // (instead of Y=HX, in preparation for inverse FFT using forward FFT library function call)
-
+                for(n=0;n < FFT_LEN; n++)
+                {
+                    inFFT[n].re = outFFT[n].re * Htot[n].re;
+                    inFFT[n].im = -(outFFT[n].im * Htot[n].im);
+                }
                 // *** POINT B3: Inverse FFT by forward FFT library function call, no need to divide by N
-
+                // int32 temp = 0;
+                //for(n=0;n < FFT_LEN; n++) // inverse real and imaginary part 
+                //{
+                //    temp = inFFT[n].im;
+                //   inFFT[n].im = inFFT[n].re;
+                //  inFFT[n].re = temp;
+                //}
+                mips_fft32(outFFT, inFFT, twiddles, Scratch, log2N);
+                calc_power_spectrum(Htot, H, FFT_LEN);
+                calc_power_spectrum(outFFT, Y, FFT_LEN);
                 // *** POINT B4: Extract real part of the inverse FFT result and remove H QX.Y scaling,
 				// discard first block as per the "Overlap-and-save" method.
-
+                for(n=0;n < SIG_LEN; n++) // inverse real and imaginary part 
+                {
+                    previousOutBuffer[n] = inFFT[n+H_LEN].re / 8192;
+                    YT[n] = inFFT[n+H_LEN].re / 8192;
+                    
+                }
                 // If required, update LCD display with SW7-SW3 switch states
                 if (switchStateChange) {
                     sprintf(LCDBuf, "H7:%s H6:%s H5:%s", (SWT_GetValue_Local(7) ? "+" : "-"),

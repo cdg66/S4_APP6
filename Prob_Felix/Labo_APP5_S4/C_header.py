@@ -6,6 +6,7 @@
 import os
 import getpass
 def PY2C( array, filename='header.h',PYtype=int,Ctype='int32_t',varname='Coefficient',complex=0, gard='HEADER_H',blocktitle='',includesanddef=['#include <stdint.h>'], static=1):
+    return #just not to hammer my ssd
     machine = os.name
     if (machine == 'nt'):
         nl = '\n\r'
