@@ -14,8 +14,11 @@ coupe_bande_Q2_5 = fct_filtre_elliptique(fe)
 
 PB_Q2_13,PH_Q2_13,Passe_bande_1k_Q2_13,Passe_bande_2k_Q2_13,Passe_bande_3500_Q2_13 = filtre_FIR()
 PH_Q2_13 = np.append(PH_Q2_13,0)
-test(PH_Q2_13,1024,fe)
-
+test(PB_Q2_13,1024,fe,fsinus=40)
+test(Passe_bande_1k_Q2_13,1024,fe,fsinus=600)
+test(Passe_bande_2k_Q2_13,1024,fe,fsinus=2000)
+test(Passe_bande_3500_Q2_13,1024,fe,fsinus=3500)
+test(PH_Q2_13,1024,fe,fsinus=4490)
 # H7 low_passe
 # H6 Bandpass filter 1000HZ
 # H5 Bandpass filter 2000HZ
