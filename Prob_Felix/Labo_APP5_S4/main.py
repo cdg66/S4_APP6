@@ -45,7 +45,7 @@ length = 768
 hanning = np.hanning(length)
 hanning = fct_format_Q2_13(hanning)
 PY2C(hanning,rootdir + 'window_header.h',complex=0,PYtype=int,Ctype='int32_t',varname='window', gard='WINDOW_HEADER_H', static=0)
-hanning_header(rootdir + 'window_header.h')
+#hanning_header(rootdir + 'window_header.h')
 
 
 

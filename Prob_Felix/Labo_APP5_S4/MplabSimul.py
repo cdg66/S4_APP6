@@ -52,6 +52,17 @@ def H7_simul(H_transfert,N,fe, title="filter",fsinus=4490):
     plt.plot(t,signal)
     plt.title("x[t]")
     plt.show()
+
+    #B0-B1
+    plt.subplots(1, 2)
+    plt.subplot(121)
+    plt.plot(t, signal)
+    plt.title("x[t]")
+
+    plt.subplot(122)
+    plt.plot(t, np.abs(FFT_sig))
+    plt.title("X[k]")
+    plt.show()
     #
     # signal_low_descrambeled = []
     # halfbuf = int(N/2)
