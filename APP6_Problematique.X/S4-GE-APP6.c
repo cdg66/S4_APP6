@@ -341,12 +341,18 @@ int main(void) {
                 //calc_power_spectrum(inFFT, Y, FFT_LEN);
                 // *** POINT B4: Extract real part of the inverse FFT result and remove H QX.Y scaling,
 				// discard first block as per the "Overlap-and-save" method.
-                int buff = 0;
-                for(n=H_LEN;n < FFT_LEN; n++) 
+                
+                for(n=0;n < H_LEN; n++) 
                 {
-                    previousOutBuffer[buff] = outFFT[n].re / 8192;
-                    buff++;
-                    //YT[n] = inFFT[n+H_LEN].re / 8192;
+                    previousOutBuffer[n] = outFFT[n+512].re / 8192;
+                    previousOutBuffer[n+H_LEN] = outFFT[n+SIG_LEN].re / 8192;
+                    previousOutBuffer[n+512] = outFFT[n].re / 8192;
+                   
+                    
+                }
+                for(n=0;n < FFT_LEN; n++) 
+                {
+                    YT[n] = outFFT[n].re / 8192;
                     
                 }
                 // If required, update LCD display with SW7-SW3 switch states
