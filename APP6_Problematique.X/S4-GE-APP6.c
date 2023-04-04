@@ -76,8 +76,8 @@
 #include "H5.h"
 #include "H4.h"
 #include "H3.h"
-//#include "window_header.h"
-#include "window.h"
+#include "window_header.h"
+//include "window.h"
 #define XK debugBuffer1
 #define H debugBuffer2
 #define Y debugBuffer3

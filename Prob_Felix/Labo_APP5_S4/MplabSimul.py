@@ -28,11 +28,13 @@ def H7_simul(H_transfert,N,fe, title="filter",fsinus=4490):
     plt.subplot(321)
     plt.plot(t, np.abs(FFT_sig))
     plt.title("X[k]")
+    plt.tight_layout()
     #plot H
     plt.subplot(322)
     plt.plot(t,np.abs(H_transfert))
     plt.plot(t, np.abs(H_transfert_congugate))
     plt.title("H[k]")
+    plt.tight_layout()
     #plot Y
     #plt.subplot(323, colspan=2, rowspan=1)
     ax = plt.subplot2grid((3,2), (1, 0), colspan=2, rowspan=1)
@@ -48,20 +50,24 @@ def H7_simul(H_transfert,N,fe, title="filter",fsinus=4490):
     plt.plot(t,signal_low_descrambeled)
     plt.title("y[t]")
 
+
     plt.subplot(325)
     plt.plot(t,signal)
     plt.title("x[t]")
+    plt.tight_layout()
     plt.show()
 
     #B0-B1
     plt.subplots(1, 2)
     plt.subplot(121)
     plt.plot(t, signal)
+    plt.tight_layout()
     plt.title("x[t]")
 
     plt.subplot(122)
     plt.plot(t, np.abs(FFT_sig))
     plt.title("X[k]")
+    plt.tight_layout()
     plt.show()
     #
     # signal_low_descrambeled = []

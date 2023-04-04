@@ -6,6 +6,7 @@ from Format_Q2_13 import*
 from Format_Q2_5 import*
 
 def filtre_FIR():
+    # plt.rcParams.update({'font.size': 14})
     Fe = 20000
     N = 1024
     n = N
@@ -70,22 +71,28 @@ def filtre_FIR():
     freq = np.fft.fftfreq(N * 4, d=1 / Fe)
     ax2.set_ylim(-100, 20)
     ax2.grid(True)
-    ax2.plot(freq[0:n], 20 * np.log10(np.abs(pbFFT[0:n])))
-    ax2.plot(freq[0:n], 20 * np.log10(np.abs(phFFT[0:n])))
-    ax2.plot(freq[0:n], 20 * np.log10(np.abs(cbFFT_1000[0:n])))
-    ax2.plot(freq[0:n], 20 * np.log10(np.abs(cbFFT_2000[0:n])))
-    ax2.plot(freq[0:n], 20 * np.log10(np.abs(cbFFT_3500[0:n])))
-    ax2.set_title('Frequency response of both FIR filters')
+    # H7 low_passe
+    # H6 Bandpass filter 1000HZ
+    # H5 Bandpass filter 2000HZ
+    # H4 Bandpass filter 3500HZ
+    # H3 hight_pass
+    ax2.plot(freq[0:n], 20 * np.log10(np.abs(pbFFT[0:n])), label='H7')
+    ax2.plot(freq[0:n], 20 * np.log10(np.abs(cbFFT_1000[0:n])), label='H6')
+    ax2.plot(freq[0:n], 20 * np.log10(np.abs(cbFFT_2000[0:n])), label='H5')
+    ax2.plot(freq[0:n], 20 * np.log10(np.abs(cbFFT_3500[0:n])), label='H4')
+    ax2.plot(freq[0:n], 20 * np.log10(np.abs(phFFT[0:n])), label='H3')
+    ax2.set_title('Réponse en fréquence de filtre H3 à H7')
     ax2.set_xlabel('Frequency [Hz]')
     ax2.set_ylabel('Amplitude [dB]')
     ax2.set_xscale('log')
+    ax2.legend()
     #ax2.set_yscale('log')
 
     # sum fft
     sumFFT = pbFFT + phFFT + cbFFT_1000 + cbFFT_2000 + cbFFT_3500
     ax3.plot(freq[0:n], 20 * np.log10(np.abs(sumFFT[0:n])))
     ax3.grid(True)
-    ax3.set_title('Sum of both filters')
+    ax3.set_title('Somme de H3 à H7')
     ax3.set_xlabel('Frequency [Hz]')
     ax3.set_ylabel('Amplitude [dB]')
     ax3.set_xscale('log')

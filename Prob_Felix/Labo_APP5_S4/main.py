@@ -39,7 +39,7 @@ PY2C(Passe_bande_3500_Q2_13,rootdir + 'H4.h',complex=1,PYtype=int,Ctype='int32c'
 header_coupe_bande(coupe_bande_Q2_13,rootdir+ 'filterIIRcoeffs.h')
 
 #Uncomment this line to release hell
-#header_coupe_bande(coupe_bande_Q2_5,rootdir+ 'filterIIRcoeffs.h')
+header_coupe_bande(coupe_bande_Q2_5,rootdir+ 'filterIIRcoeffs.h')
 
 #genrate hanning window
 length = 768
