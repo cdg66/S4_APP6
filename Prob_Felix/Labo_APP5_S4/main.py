@@ -9,7 +9,7 @@ from Coupe_bande_header import*
 import os
 from MplabSimul import H7_simul as test
 #from format_QX.Y import *
-# plt.ion()  # Comment out if using scientific mode!
+plt.ion()  # Comment out if using scientific mode!
 fe = 20000
 coupe_bande_Q2_13,coupe_bande_Q2_5 = fct_filtre_elliptique(fe)
 
@@ -49,3 +49,4 @@ PY2C(hanning,rootdir + 'window_header.h',complex=0,PYtype=int,Ctype='int32_t',va
 #hanning_header(rootdir + 'window_header.h')
 fenetre_signal_2k()
 
+print("test")

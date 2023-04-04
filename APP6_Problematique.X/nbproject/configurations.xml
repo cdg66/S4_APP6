@@ -30,7 +30,7 @@
       <itemPath>/home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/H5.h</itemPath>
       <itemPath>/home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/H6.h</itemPath>
       <itemPath>/home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/filterFIRcoeffs.h</itemPath>
-      <itemPath>/home/capaciteur/Documents/Github/S4_APP6/APP6_Problematique.X/window_header.h</itemPath>
+      <itemPath>window_header.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -78,7 +78,7 @@
         <platformTool>PK3OBPlatformTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
         <languageToolchainVersion>4.10</languageToolchainVersion>
-        <platform>2</platform>
+        <platform>3</platform>
       </toolsSet>
       <packs>
         <pack name="PIC32MX_DFP" vendor="Microchip" version="1.3.231"/>
