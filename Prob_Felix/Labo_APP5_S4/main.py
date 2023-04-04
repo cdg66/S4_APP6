@@ -4,6 +4,7 @@ import numpy as np
 from window import*
 from C_header import PY2C
 from creation_Filtrage_FIR import *
+from Plan_de_test_fenetre import *
 from Coupe_bande_header import*
 import os
 from MplabSimul import H7_simul as test
@@ -46,7 +47,5 @@ hanning = np.hanning(length)
 hanning = fct_format_Q2_13(hanning)
 PY2C(hanning,rootdir + 'window_header.h',complex=0,PYtype=int,Ctype='int32_t',varname='window', gard='WINDOW_HEADER_H', static=0)
 #hanning_header(rootdir + 'window_header.h')
-
-
-
+fenetre_signal_2k()
 

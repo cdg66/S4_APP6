@@ -7,6 +7,7 @@ def fct_filtre_elliptique(fe: float):
     """
     Problème 1: Filtre IIR elliptique
     """
+    #plt.rcParams.update({'font.size': 16})
     # Filter specifications
     fc_low: float = 950
     fc_high: float = 1050
